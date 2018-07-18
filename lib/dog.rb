@@ -48,7 +48,7 @@ class Dog
         SQL
 
         DB[:conn].execute(sql, id).collect do |row|
-            self.create(row)
-        end 
+            self.new(row[1], row[2], row[0])
+        end
     end
 end
