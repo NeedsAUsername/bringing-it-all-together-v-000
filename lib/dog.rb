@@ -49,6 +49,6 @@ class Dog
 
         DB[:conn].execute(sql, id).collect do |row|
             self.new(row[1], row[2], row[0])
-        end
+        end.first
     end
 end
