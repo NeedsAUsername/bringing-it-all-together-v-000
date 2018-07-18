@@ -2,6 +2,9 @@ require 'pry'
 require_relative '../config/environment.rb'
 require 'sqlite3'
 
+DB = {:conn => SQLite3::Database.new("db/dogs.db")}
+
+
 class Dog
     attr_accessor :name, :breed, :id
 
