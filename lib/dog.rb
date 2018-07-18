@@ -1,3 +1,4 @@
+require 'pry'
 class Dog
     attr_accessor :name, :breed, :id
 
@@ -49,6 +50,7 @@ class Dog
 
         DB[:conn].execute(sql, id).collect do |row|
             self.new(row[1], row[2], row[0])
-        end.first
+        end
     end
 end
+binding.pry
