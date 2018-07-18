@@ -1,5 +1,7 @@
 require 'pry'
 require_relative '../config/environment.rb'
+require 'sqlite3'
+
 class Dog
     attr_accessor :name, :breed, :id
 
