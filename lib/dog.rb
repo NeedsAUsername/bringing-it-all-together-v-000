@@ -83,7 +83,7 @@ class Dog
         sql = <<-SQL
             SELECT *
             FROM dogs
-            WHERE dogs.name = ?
+            WHERE name = ?
         SQL
 
         DB[:conn].execute(sql, name).collect do |row|
@@ -94,7 +94,10 @@ class Dog
     def update
         sql = <<-SQL
             UPDATE TABLE dogs
-            SET name, 
+            SET name = ?, breed = ?
+            WHERE id = ?
         SQL
+
+        DB[:conn].execute(sql, self.name, self.breed, self.id)
     end
 end
