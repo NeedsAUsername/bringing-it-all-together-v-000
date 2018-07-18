@@ -30,5 +30,6 @@ class Dog
         SQL
 
         DB[:conn].execute(sql, self.name, self.breed)
+        @id = DB[:conn].execute("SELECT last_from_rowid() ")
     end
 end
