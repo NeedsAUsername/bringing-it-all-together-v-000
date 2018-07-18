@@ -90,4 +90,10 @@ class Dog
             self.new(name: row[1], breed: row[2], id: row[0])
         end.first
     end
+
+    def update
+        sql = <<-SQL
+            UPDATE TABLE dogs 
+        SQL
+    end
 end
