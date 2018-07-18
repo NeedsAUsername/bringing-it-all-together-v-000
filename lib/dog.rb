@@ -69,6 +69,6 @@ class Dog
         dog = DB[:conn].execute(sql, name, breed)
         if !dog.empty?
             new = dog[0]
-            self.new 
+            self.new  
     end
 end
