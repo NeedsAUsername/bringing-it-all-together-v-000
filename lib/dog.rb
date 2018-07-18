@@ -1,4 +1,5 @@
 require 'pry'
+require_relative '../config/environment'
 class Dog
     attr_accessor :name, :breed, :id
 
