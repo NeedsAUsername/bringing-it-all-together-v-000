@@ -68,7 +68,7 @@ class Dog
 
         dog_data = DB[:conn].execute(sql, name, breed)
         if !dog_data.empty?
-            attributes = dog[0]
+            attributes = dog_data[0]
             dog = self.new(name: attributes[1], breed: attributes[2], id: attributes[0])
         else dog = self.create(name: name, breed: breed)
         end
